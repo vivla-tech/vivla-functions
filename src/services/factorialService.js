@@ -29,4 +29,17 @@ export const getJobs = async () => {
     }
 
     return response.json();
-}; 
+};
+
+export const getJobById = async (id) => {
+    const response = await fetch(`${FACTORIAL_CONFIG.FACTORIAL_API_URL}/${id}`, {
+        method: 'GET',
+        headers
+    });
+
+    if (!response.ok) {
+        await handleApiError(response);
+    }
+
+    return response.json();
+};
