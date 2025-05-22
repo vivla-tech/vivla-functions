@@ -19,7 +19,7 @@ const handleApiError = async (response) => {
 };
 
 export const getJobs = async () => {
-    const response = await fetch(FACTORIAL_CONFIG.FACTORIAL_API_URL, {
+    const response = await fetch(`${FACTORIAL_CONFIG.FACTORIAL_API_URL}?status=published`, {
         method: 'GET',
         headers
     });
